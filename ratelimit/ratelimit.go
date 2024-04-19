@@ -81,6 +81,10 @@ func (rl *tokenBucketRateLimiter) Allow(ctx context.Context, key string) bool {
 		rl.Unlock()
 		return true
 	}
+	if config.MaxRequests == 0 {
+		rl.Unlock()
+		return true
+	}
 	bucket, ok := rl.buckets[key]
 	rl.Unlock()
 	fmt.Println("ok value 2", ok)

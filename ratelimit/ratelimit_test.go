@@ -13,11 +13,11 @@ func TestRateLimitMiddleware(t *testing.T) {
 
 	// Add rate limit configurations
 	rateLimiter.AddConfig("/api/v1/users", &RateLimitConfig{
-		MaxRequests: 0,
+		MaxRequests: 1,
 		Window:      time.Second,
 	})
 	rateLimiter.AddConfig("/api/v1/orders", &RateLimitConfig{
-		MaxRequests: 0,
+		MaxRequests: 1,
 		Window:      time.Second,
 	})
 
