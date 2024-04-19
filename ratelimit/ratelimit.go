@@ -75,8 +75,8 @@ func (rl *tokenBucketRateLimiter) Allow(ctx context.Context, key string) bool {
 	fmt.Println(" key is ", config, ok)
 	if !ok {
 		rl.configs[key] = &RateLimitConfig{
-			MaxRequests: 0,
-			Window:      3,
+			MaxRequests: 1,
+			Window:      1,
 		}
 		rl.Unlock()
 		return true

@@ -22,11 +22,11 @@ func main() {
 
 	// Add rate limit configurations
 	rateLimiter.AddConfig("/api/v1/users", &ratelimit.RateLimitConfig{
-		MaxRequests: 0,
+		MaxRequests: 1,
 		Window:      time.Second,
 	})
 	rateLimiter.AddConfig("/api/v1/orders", &ratelimit.RateLimitConfig{
-		MaxRequests: 0,
+		MaxRequests: 1,
 		Window:      time.Second,
 	})
 
